@@ -1,0 +1,45 @@
+<!DOCTYPE html> 
+<head>
+	<title>Primeira página HTML</title>
+</head>
+<body style="background-color: #00CD66">
+	<p style="font-family: Arial; font-size: 20px; color:#C1FFC1"> Hello world!</p>
+</body>
+</html>
+
+<!DOCTYPE html> 
+<head>
+	<title>Primeiro exemplo de audio e video</title>
+</head>
+<body>
+		<video controls="controls" src="big-buck-bunny_trailer.webm" width "800" height "800" autoplay="autoplay">
+		</video>
+		<br><br>
+		<audio controls="controls">
+			<source src="hold_on.mp3" type="audio/mp3">
+			<source src="big-buck-bunny_trailer.webm" type="video/webm">
+		</audio>
+		
+</body>
+</html>
+
+<!DOCTYPE html> 
+<head>
+	<title>Primeiro exemplo de formularios</title>
+</head>
+<body>
+		<form>
+				Nome: <br><input type="text" required="required" placeholder="seu nome" autofocus="autofocus""><br>
+				Idade: <br><input type="number" min="18" max="30"><br>
+				Seu site: <br><input type="url" placeholder="http://seusite.com.br"><br>
+				Email: <br><input type="email"><br>
+				Data De Nascimento: <br><input type="date"><br>
+				Buscar por: <br><input type="search"><br>
+				Cor: <br><input type="color"><br>
+				
+		<input type="submit" value="cadastrar">
+		</form>
+</body>
+</html>
+
+

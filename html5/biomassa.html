@@ -1,0 +1,194 @@
+<!DOCTYPE html> 
+<head>
+	<title>Primeira página HTML</title>
+</head>
+<body style="background-color: #00CD66">
+	<p style="font-family: Arial; font-size: 20px; color:#C1FFC1"> Hello world!</p>
+</body>
+</html>
+
+<!DOCTYPE html> 
+<head>
+	<title>Primeiro exemplo de audio e video</title>
+</head>
+<body>
+		<video controls="controls" src="big-buck-bunny_trailer.webm" width "800" height "800" autoplay="autoplay">
+		</video>
+		<br><br>
+		<audio controls="controls">
+			<source src="hold_on.mp3" type="audio/mp3">
+			<source src="big-buck-bunny_trailer.webm" type="video/webm">
+		</audio>
+		
+</body>
+</html>
+
+<!DOCTYPE html> 
+<head>
+	<title>Primeiro exemplo de formularios</title>
+</head>
+<body>
+		<form>
+				Nome: <br><input type="text" required="required" placeholder="seu nome" autofocus="autofocus""><br>
+				Idade: <br><input type="number" min="18" max="30"><br>
+				Seu site: <br><input type="url" placeholder="http://seusite.com.br"><br>
+				Email: <br><input type="email"><br>
+				Data De Nascimento: <br><input type="date"><br>
+				Buscar por: <br><input type="search"><br>
+				Cor: <br><input type="color"><br>
+				Placa do carro: <br><input placeholder="aaa-0000" type="text" pattern="[A-Za-z]{3}-[0-9]{4}" max lenght="8" required="required"><br>
+				CEP: <br><input type="text" placeholder="00000-000" pattern="[0-9]{5}-[0-9]{3}" max lenght="9" required="required"><br>
+		<input type="submit" value="cadastrar">
+		</form>
+</body>
+</html>
+
+<!DOCTYPE html> 
+<head>
+	<title>Local storage</title>
+</head>
+<script type="text/javascript">
+	function salvar(){
+			localStorage.setItem("l_nome", document.getElementById("nome").value);
+	}
+	function exibir(){
+			document.getElementById("nome").value = localStorage.getItem("l_nome");
+	}
+</script>
+<body onload="exibir();">
+<form>
+		Nome: <input type="text" id="nome">
+		<input type="button" value="salvar" onclick="salvar();"/>
+</form>
+</body>
+</html>
+
+<!DOCTYPE html> 
+<head>
+	<title>Session storage</title>
+</head>
+<script type="text/javascript">
+	function salvar(){
+			sessionStorage.setItem("l_nome", document.getElementById("nome").value);
+	}
+	function exibir(){
+			document.getElementById("nome").value = sessionStorage.getItem("l_nome");
+	}
+</script>
+<body onload="exibir();">
+<form>
+		Nome: <input type="text" id="nome">
+		<input type="button" value="salvar" onclick="salvar();"/>
+</form>
+</body>
+</html>
+
+<!DOCTYPE html> 
+<head>
+	<title>Geolocalizacao</title>
+</head>
+<script type="text/javascript">
+		function getLocation(){
+			if (navigator.geolocation){
+				navigator.geolocation.getCurrentPosition(getPosition);
+			} else {
+				alert("Geolocalização não suportada por este navegador!!!");
+			}
+		}
+		
+		function getPosition(posicao){
+			document.getElementById("la").value = posicao.coords.latitude;
+			document.getElementById("lo").value = posicao.coords.longitude;
+		}
+</script>
+
+<body>
+
+	<form>
+			latitude: <input type="text" id="la"><br>
+			longitude: <input type="text" id="lo"><br>
+			<input type="button" value="Exibir" onclick="getLocation();">
+			
+	</form>
+
+</body>
+</html>
+
+<!DOCTYPE html> 
+<head>
+	<title>Notification</title>
+</head>
+<script type="text/javascript">
+	function getNotification(){
+	if (window.webkitNotifications.checkPermission() == 0){
+			showNotification();
+		} else {
+				window.webkitNotifications.requestPermission();
+			}
+	}
+	function showNotification(){
+	var n = window.webkitNotifications.createNotification("cabrita.jpg","AAARGH","Novo e-mail");
+	n.show();
+	}
+</script>
+
+<body>
+
+	<input type="button" onclick="getNotification();" value="Exibir"
+
+</body>
+</html>
+
+<!DOCTYPE html> 
+<head>
+	<title>Canvas</title>
+
+	<script type="text/javascript">
+		var x_obj1 = 0;
+		var y_obj2 = 100;
+		
+		function load(){
+			var cenario = document.getElementById("cenario");
+			var ctx = cenario.getContext("2d");
+			//fundo
+			ctx.fillStyle = "#FFFFFF"
+			ctx.fillRect( 0, 0, 800, 600);	
+			
+			ctx.fillStyle = "#c0c0c0"
+			ctx.fillRect( x_obj1, 0, 100, 50);	
+			ctx.fillStyle = "yellow"
+			ctx.fillRect( 100, y_obj2, 100, 50);	
+			
+			x_obj1 = x_obj1 + 5
+			y_obj2 = y_obj2 + 5
+			
+			if(x_obj1 > 300){
+			x_obj1 = 0;
+			}
+			
+			if(y_obj2 > 300){
+			y_obj2 = 0;
+			}
+						}
+		
+		setInterval('load();', 100);
+	</script>
+	
+</head>
+
+<body onload="load();">
+
+	<canvas id="cenario" width="800" height="600" >
+
+</body>
+</html>
+
+//adobe edge para edição do canvas.
+
+//Editores html5:
+//Dream Weaver cs6 (o melhor)
+//Microsoft Expression Web 4 SP1 (custo mais baixo)
+//Notepad++ (mais simples)
+//Aptana Studio para edição de html5 (O melhor entre os gratuitos para css e javascript)
+
+//Semantica: Header, footer, nav, article e section	

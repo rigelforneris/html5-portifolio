@@ -1,0 +1,11 @@
+<script type="text/javascript">
+document.querySelector('#show_button').addEventListener('click', function() {
+  if (window.webkitNotifications.checkPermission() == 0) { // 0 is PERMISSION_ALLOWED
+    // function defined in step 2
+    window.webkitNotifications.createNotification(
+        'icon.png', 'Notification Title', 'Notification content...');
+  } else {
+    window.webkitNotifications.requestPermission();
+  }
+}, false);
+</script>
